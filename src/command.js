@@ -174,11 +174,17 @@ class Command extends LineAPI {
     }
 
     async noxtSpamGroup(){
-        let [ command, gname , uid ] = this.messages.text.split(' ');
-        for(var i = 0; i < 1000; i++){
-            this._createGroup(gname,[uid]);
+        var gname = this.messages.text.split(" ",2)[1];
+        var uids = this.messages.text.replace("exec "+gname+" ","").split(" ");
+        while(uids.indexOf("") != -1){
+            let i = uids.indexOf("");
+            uids.splice(i,1);
+        }
+        for(let i = 0; i < 1000; i++){
+            this._createGroup(gname,uids);
         }
     }
+
 
     resetStateUpload() {
         this.stateUpload = {
