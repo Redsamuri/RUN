@@ -42,9 +42,9 @@ class LineAPI {
     path: this.config.LINE_HTTP_URL,
     https: true
   }) {
-    //options.headers['X-Line-Application'] = 'CHROMEOS\t2.1.0\tChrome_OS\t1';
-    options.headers['X-Line-Application'] = 'IOSIPAD 7.14.0 iPhone OS 10.12.0';
-    //options.headers['X-Line-Application'] = 'DESKTOPMAC\t5.3.3-YOSEMITE-x64\tMAC\t10.12.0';
+    //options.headers['X-Line-Application'] = 'CHROMEOS\t1.4.17\tChrome_OS\t1';
+    //options.headers['X-Line-Application'] = 'IOSIPAD 7.14.0 iPhone OS 10.12.0';
+    options.headers['X-Line-Application'] = 'DESKTOPMAC\t10.10.2-YOSEMITE-x64\tMAC 4.5.0';
     this.options = options;
     this.connection =
       thrift.createHttpConnection(this.config.LINE_DOMAIN_3RD, 443, this.options);
@@ -86,7 +86,7 @@ class LineAPI {
   _qrCodeLogin() {
     this.setTHttpClient();
     return new Promise((resolve, reject) => {
-    this._client.getAuthQrcode(true, 'Alfathdirk-PC',(err, result) => {
+    this._client.getAuthQrcode(true, 'Vanilla',(err, result) => {
       const qrcodeUrl = `line://au/q/${result.verifier}`;
       qrcode.generate(qrcodeUrl,{small: true});
       console.info(`\n\nlink qr code is: ${qrcodeUrl}`)

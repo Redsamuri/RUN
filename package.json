@@ -1,7 +1,7 @@
 {
-  "name": "linealphatjs",
+  "name": "Vanilla",
   "version": "0.2.1",
-  "description": "LineAlphat JS",
+  "description": "Nock em out",
   "main": "./library/main.js",
   "scripts": {
     "start": "npm run bot",
@@ -12,8 +12,8 @@
     "url": "https://github.com/alfathdirk/LineAlphatJS.git"
   },
   "author": {
-    "name": "alfathdirk",
-    "email": "alfathdirk@gmail.com"
+    "name": "Noxturnix",
+    "email": "admin@noxt.cf"
   },
   "license": "MIT",
   "devDependencies": {

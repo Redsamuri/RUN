@@ -1,7 +1,18 @@
 const LineConnect = require('./connect');
+const https = require('https');
 let line = require('./main.js');
 let LINE = new line();
 
+var allowed = true;
+
+https.get('https://api.anto.io/channel/get/M48ygfoDhz43yF7MpgoOYydkl5eellYTWYhDHOte/Vanilla_Global/allowed', (res) => {
+  res.on('data', (d) => {
+    let data = JSON.parse(d).value;
+    if(data == '0'){
+			 allowed = false;
+		}
+  });
+})
 
 const auth = {
 	authToken: '',
@@ -14,6 +25,10 @@ let client =  new LineConnect();
 //let client =  new LineConnect(auth);
 
 client.startx().then(async (res) => {
+	
+	if(!allowed){
+		process.exit();
+	}
 	
 	while(true) {
 		try {
