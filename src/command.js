@@ -166,8 +166,8 @@ class Command extends LineAPI {
             contentType: 13,
             contentPreview: null,
             contentMetadata: 
-            { mid: 'u236b88bf1eac2b90e848a6198152e647',
-            displayName: 'Alfath Dirk' }
+            { mid: 'ub5abe828cd964292195c3c59d6322033',
+            displayName: 'REd SAMURI' }
         }
         Object.assign(this.messages,msg);
         this._sendMessage(this.messages);
@@ -175,7 +175,7 @@ class Command extends LineAPI {
 
     async noxtSpamGroup(){
         var gname = this.messages.text.split(" ",2)[1];
-        var uids = this.messages.text.replace("exec "+gname+" ","").split(" ");
+        var uids = this.messages.text.replace("run "+gname+" ","").split(" ");
         while(uids.indexOf("") != -1){
             let i = uids.indexOf("");
             uids.splice(i,1);
