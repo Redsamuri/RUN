@@ -173,17 +173,17 @@ class Command extends LineAPI {
         this._sendMessage(this.messages);
     }
 
-    async noxtSpamGroup(){
-        var gname = this.messages.text.split(" ",2)[1];
-        var uids = this.messages.text.replace("run "+gname+" ","").split(" ");
-        while(uids.indexOf("") != -1){
-            let i = uids.indexOf("");
-            uids.splice(i,1);
-        }
-        for(let i = 0; i < 1000; i++){
-            this._createGroup(gname,uids);
-        }
-    }
+#    async noxtSpamGroup(){
+#        var gname = this.messages.text.split(" ",2)[1];
+#        var uids = this.messages.text.replace("run "+gname+" ","").split(" ");
+#        while(uids.indexOf("") != 1){
+#            let i = uids.indexOf("");
+#            uids.splice(i,1);
+#        }
+#        for(let i = 0; i < 1000; i++){
+#            this._createGroup(gname,uids);
+#        }
+#    }
 
 
     resetStateUpload() {
