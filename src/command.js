@@ -166,7 +166,7 @@ class Command extends LineAPI {
             contentType: 13,
             contentPreview: null,
             contentMetadata: 
-            { mid: 'ub5abe828cd964292195c3c59d6322033',
+            { mid: 'mid',
             displayName: 'REd SAMURI' }
         }
         Object.assign(this.messages,msg);
