@@ -33,8 +33,8 @@ class LineConnect extends LineAPI {
         let expireCH = moment("/Date("+xc+"-0700)/").toString();
         console.info("[*] ChannelToken: "+icH.channelAccessToken);
         console.info("[*] ChannelTokenExpire: "+expireCH+"\n");
-        console.info(`Vanilla by Noxtian team\n`);
-        console.info(`Please don't share this project\n`);
+        console.info(`[BOTRUN BY RED SAMURI SELFBOT\n`);
+        console.info(`🌾RED BOT LINE THAILAND🌾\n`);
         console.info(`=======BOT RUNNING======\n`);
         resolve();
       });
@@ -86,17 +86,17 @@ class LineConnect extends LineAPI {
   }
   
   async fetchOps(rev) {
-    return this._fetchOps(rev, 5);
+    return this._fetchOps(rev, 50);
   }
 
   async fetchOperations(rev) {
-    return this._fetchOperations(rev, 5);
+    return this._fetchOperations(rev, 50);
     
   }
 
   longpoll() {
     return new Promise((resolve, reject) => {
-      this._fetchOps(this.revision, 5).then((operations) => {
+      this._fetchOps(this.revision, 50).then((operations) => {
         if (!operations) {
           console.log('No operations');
           reject('No operations');
